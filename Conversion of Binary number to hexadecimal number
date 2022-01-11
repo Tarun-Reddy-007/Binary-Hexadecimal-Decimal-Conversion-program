@@ -1,0 +1,50 @@
+# Binary to hexadecimal
+
+def bintohex():
+    listbh1=[]
+    def bintohexs(bh):
+        bh=str(bh)
+        sizebh=len(bh)
+        bh=int(bh)
+        sumbh=0
+        placebh=1
+        for ibh in range(sizebh):
+            rembh1=bh%10
+            if(rembh1!=0 and rembh1!=1):
+                print("Invalid binary number")
+                break
+            else:
+                if(rembh1==0):
+                    sumbh=sumbh+0
+                else:
+                    sumbh=sumbh+placebh
+            placebh=placebh+placebh
+            bh=bh//10
+        if(sumbh==0):
+            pass
+        else:
+            listbh1.append(sumbh)        
+    binbh=input("Enter the binary number to convert to Hexadecimal : ")
+    sizel=len(binbh)
+    binbh=int(binbh)
+    for kbh in range(sizel):
+        rembh2=binbh%10000
+        bintohexs(rembh2)
+        binbh=binbh//10000
+    listbh2 = listbh1[::-1]
+    print("The corresponding Hexadecimal number is : ",end=" ")
+    for jbh in listbh2:
+        if jbh==10:
+            print("A",end="")
+        elif jbh==11:
+            print("B",end="")
+        elif jbh==12:
+            print("C",end="")
+        elif jbh==13:
+            print("D",end="")
+        elif jbh==14:
+            print("E",end="")
+        elif jbh==15:
+            print("F",end="")
+        else:
+            print(jbh,end="")
