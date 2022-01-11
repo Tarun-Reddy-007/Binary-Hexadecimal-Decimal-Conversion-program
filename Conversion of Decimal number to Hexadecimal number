@@ -1,0 +1,44 @@
+# Decimal to Hexadecimal
+
+def dectohexa():
+    listdh1=[]
+    dh=int(input("Enter the Decimal number to convert to Binary number : "))
+    while(dh>0):
+        remdh=dh%2
+        if remdh==1:
+            listdh1.append(1)
+        else:
+            listdh1.append(0)
+        dh=dh//2
+    listdh2=listdh1[::-1]
+    listdh4=[]
+    while len(listdh2)>0:
+        listdh3=listdh2[-4:len(listdh2)]
+        idh=len(listdh3)-1
+        placedh=1
+        sumdh=0
+        while(idh>=0):
+            if listdh3[idh]==1:
+                sumdh=sumdh+placedh
+            else:
+                sumdh=sumdh+0
+            placedh=placedh+placedh
+            idh=idh-1
+        listdh4.append(sumdh)
+        listdh2=listdh2[0:-4]
+    listdh4=listdh4[::-1]
+    for jdh in listdh4:
+        if jdh==10:
+            print("A",end="")
+        elif jdh==11:
+            print("B",end="")
+        elif jdh==12:
+            print("C",end="")
+        elif jdh==13:
+            print("D",end="")
+        elif jdh==14:
+            print("E",end="")
+        elif jdh==15:
+            print("F",end="")
+        else:
+            print(jdh,end="")
