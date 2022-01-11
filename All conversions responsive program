@@ -1,0 +1,284 @@
+# Binary, Hex, Decimal Conversion
+
+#Conversion of Binary number to Decimal number program
+
+def bintodec():
+    binbd=input("Enter the binary number to convert to decimal number: ")
+    sizebd=len(binbd)
+    binbd=int(binbd)
+    sumbd=0
+    placebd=1
+    for ibd in range(sizebd):
+        rembd=binbd%10
+        if(rembd!=0 and rembd!=1):
+            print("Invalid binary number")
+            break
+        else:
+            if(rembd==0):
+                sumbd=sumbd+0
+            else:
+                sumbd=sumbd+placebd
+        placebd=placebd+placebd
+        binbd=binbd//10
+    if(sumbd==0):
+        pass
+    else:
+        print("The corresponding decimal number is : ",sumbd)
+        
+
+# Binary to hexadecimal
+
+def bintohex():
+    listbh1=[]
+    def bintohexs(bh):
+        bh=str(bh)
+        sizebh=len(bh)
+        bh=int(bh)
+        sumbh=0
+        placebh=1
+        for ibh in range(sizebh):
+            rembh1=bh%10
+            if(rembh1!=0 and rembh1!=1):
+                print("Invalid binary number")
+                break
+            else:
+                if(rembh1==0):
+                    sumbh=sumbh+0
+                else:
+                    sumbh=sumbh+placebh
+            placebh=placebh+placebh
+            bh=bh//10
+        if(sumbh==0):
+            pass
+        else:
+            listbh1.append(sumbh)        
+    binbh=input("Enter the binary number to convert to Hexadecimal : ")
+    sizel=len(binbh)
+    binbh=int(binbh)
+    for kbh in range(sizel):
+        rembh2=binbh%10000
+        bintohexs(rembh2)
+        binbh=binbh//10000
+    listbh2 = listbh1[::-1]
+    print("The corresponding Hexadecimal number is : ",end=" ")
+    for jbh in listbh2:
+        if jbh==10:
+            print("A",end="")
+        elif jbh==11:
+            print("B",end="")
+        elif jbh==12:
+            print("C",end="")
+        elif jbh==13:
+            print("D",end="")
+        elif jbh==14:
+            print("E",end="")
+        elif jbh==15:
+            print("F",end="")
+        else:
+            print(jbh,end="")
+            
+            
+#Decimal to binary
+
+def dectobin():
+    listdb1=[]
+    db=int(input("Enter the Decimal number to convert to Binary number : "))
+    while(db>0):
+        remdb=db%2
+        if remdb==1:
+            listdb1.append(1)
+        else:
+            listdb1.append(0)
+        db=db//2
+    listdb2=listdb1[::-1]
+    print("The corresponding binary number is : ",end=" ")
+    for idb in listdb2:
+        print(idb,end="")
+        
+
+#Hexadecimal to binary
+
+def hextobin():
+    def hextobins(hb):
+        listhb1=[]
+        while(hb>0):
+            remhb=hb%2
+            if remhb==1:
+                listhb1.append(1)
+            else:
+                listhb1.append(0)
+            hb=hb//2
+        if len(listhb1)==3:
+            listhb1.append(0)
+        elif len(listhb1)==2:
+            listhb1.append(0)
+            listhb1.append(0)
+        elif len(listhb1)==1:
+            listhb1.append(0)
+            listhb1.append(0)
+            listhb1.append(0)
+        else:
+            pass
+        listhb2=listhb1[::-1]
+        for ihb in listhb2:
+            print(ihb,end="")
+    hexahb=input("Enter the Hexadecimal number to convert to Binary number : ")
+    sizehb=len(hexahb)
+    listhb3=list(hexahb)
+    for jhb in range(len(listhb3)):
+        if listhb3[jhb]=="A" or listhb3[jhb]=="a":
+            listhb3[jhb]="10"
+        elif listhb3[jhb]=="B" or listhb3[jhb]=="b":
+            listhb3[jhb]="11"
+        elif listhb3[jhb]=="C" or listhb3[jhb]=="c":
+            listhb3[jhb]="12"
+        elif listhb3[jhb]=="D" or listhb3[jhb]=="d":
+            listhb3[jhb]="13"
+        elif listhb3[jhb]=="E" or listhb3[jhb]=="e":
+            listhb3[jhb]="14"
+        elif listhb3[jhb]=="F" or listhb3[jhb]=="f":
+            listhb3[jhb]="15"
+    for khb in listhb3:
+        khb=int(khb)
+        hextobins(khb)
+
+        
+# Hexadecimal to Decimal
+        
+def hextodec():
+    def hextobin(hd):
+        listhd1=[] 
+        while(hd>0):    
+            remhd1=hd%2
+            if remhd1==1:
+                listhd1.append(1)
+            else:
+                listhd1.append(0)
+            hd=hd//2
+        if len(listhd1)==3:
+            listhd1.append(0)
+        elif len(listhd1)==2:
+            listhd1.append(0)
+            listhd1.append(0)
+        elif len(listhd1)==1:
+            listhd1.append(0)
+            listhd1.append(0)
+            listhd1.append(0)
+        else:
+            pass
+        listhd2=listhd1[::-1]
+        for ihd in listhd2:
+            listhd3.append(ihd)
+    listhd3=[]    
+    hexahd=input("Enter the Hexadecimal number to convert to Decimal number : ")
+    sizehd=len(hexahd)
+    listhd4=list(hexahd)
+    for jhd in range(len(listhd4)):
+        if listhd4[jhd]=="A" or listhd4[jhd]=="a":
+            listhd4[jhd]="10"
+        elif listhd4[jhd]=="B" or listhd4[jhd]=="b":
+            listhd4[jhd]="11"
+        elif listhd4[jhd]=="C" or listhd4[jhd]=="c":
+            listhd4[jhd]="12"
+        elif listhd4[jhd]=="D" or listhd4[jhd]=="d":
+            listhd4[jhd]="13"
+        elif listhd4[jhd]=="E" or listhd4[jhd]=="e":
+            listhd4[jhd]="14"
+        elif listhd4[jhd]=="F" or listhd4[jhd]=="f":
+            listhd4[jhd]="15"
+    for khd in listhd4:
+        khd=int(khd)
+        hextobin(khd)
+    lhd=len(listhd3)-1
+    placehd=1
+    sumhd=0
+    while(lhd>=0):
+        if(listhd3[lhd]==1):
+            sumhd=sumhd+placehd
+        else:
+            sumhd=sumhd+0
+        placehd=placehd+placehd
+        lhd=lhd-1
+    print(sumhd)
+    
+
+# Decimal to Hexadecimal
+
+def dectohexa():
+    listdh1=[]
+    dh=int(input("Enter the Decimal number to convert to Hexadecimal number : "))
+    while(dh>0):
+        remdh=dh%2
+        if remdh==1:
+            listdh1.append(1)
+        else:
+            listdh1.append(0)
+        dh=dh//2
+    listdh2=listdh1[::-1]
+    listdh4=[]
+    while len(listdh2)>0:
+        listdh3=listdh2[-4:len(listdh2)]
+        idh=len(listdh3)-1
+        placedh=1
+        sumdh=0
+        while(idh>=0):
+            if listdh3[idh]==1:
+                sumdh=sumdh+placedh
+            else:
+                sumdh=sumdh+0
+            placedh=placedh+placedh
+            idh=idh-1
+        listdh4.append(sumdh)
+        listdh2=listdh2[0:-4]
+    listdh4=listdh4[::-1]
+    for jdh in listdh4:
+        if jdh==10:
+            print("A",end="")
+        elif jdh==11:
+            print("B",end="")
+        elif jdh==12:
+            print("C",end="")
+        elif jdh==13:
+            print("D",end="")
+        elif jdh==14:
+            print("E",end="")
+        elif jdh==15:
+            print("F",end="")
+        else:
+            print(jdh,end="")
+            
+            
+# Choice of conversion 
+
+flag=1
+while(flag==1):
+    print("Enter 1 to convert Binary number to Decimal number")
+    print("Enter 2 to convert Binary number to Hexadecimal number")
+    print("Enter 3 to convert Decimal number to Binary number")
+    print("Enter 4 to convert Hexadecimal number to Binary number")
+    print("Enter 5 to convert Hexadecimal number to Decimal number")
+    print("Enter 6 to convert Decimal number to Hexadecimal number\n")
+    choice=int(input("Enter your choice : "))
+    if choice==1:
+        bintodec()
+    elif choice==2:
+        bintohex()
+    elif choice==3:
+        dectobin()
+    elif choice==4:
+        hextobin()
+    elif choice==5:
+        hextodec()
+    elif choice==6:
+        dectohexa()
+    else:
+        print("Invalid Choice!")
+    print("\n\nDo you want to enter a new number : ")
+    re=input("Enter y for a new conversion : \nEnter any other key to exit : ")
+    if(re=="y" or re=="Y"):
+        flag=1
+        print("\n")
+        
+    else:
+        flag=0
+print("\nThank You!")
