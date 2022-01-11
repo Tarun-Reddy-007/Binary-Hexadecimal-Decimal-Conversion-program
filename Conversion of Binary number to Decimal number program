@@ -1,0 +1,24 @@
+#Conversion of Binary number to Decimal number program
+
+def bintodec():
+    binbd=input("Enter the binary number to convert to decimal number: ")
+    sizebd=len(binbd)
+    binbd=int(binbd)
+    sumbd=0
+    placebd=1
+    for ibd in range(sizebd):
+        rembd=binbd%10
+        if(rembd!=0 and rembd!=1):
+            print("Invalid binary number")
+            break
+        else:
+            if(rembd==0):
+                sumbd=sumbd+0
+            else:
+                sumbd=sumbd+placebd
+        placebd=placebd+placebd
+        binbd=binbd//10
+    if(sumbd==0):
+        pass
+    else:
+        print("The corresponding decimal number is : ",sumbd)
