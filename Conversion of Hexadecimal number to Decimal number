@@ -1,0 +1,57 @@
+#Hexadecimal to Decimal
+
+def hextodec():
+    def hextobin(hd):
+        listhd1=[] 
+        while(hd>0):    
+            remhd1=hd%2
+            if remhd1==1:
+                listhd1.append(1)
+            else:
+                listhd1.append(0)
+            hd=hd//2
+        if len(listhd1)==3:
+            listhd1.append(0)
+        elif len(listhd1)==2:
+            listhd1.append(0)
+            listhd1.append(0)
+        elif len(listhd1)==1:
+            listhd1.append(0)
+            listhd1.append(0)
+            listhd1.append(0)
+        else:
+            pass
+        listhd2=listhd1[::-1]
+        for ihd in listhd2:
+            listhd3.append(ihd)
+    listhd3=[]    
+    hexahd=input("Enter the Hexadecimal number to convert to Decimal number : ")
+    sizehd=len(hexahd)
+    listhd4=list(hexahd)
+    for jhd in range(len(listhd4)):
+        if listhd4[jhd]=="A" or listhd4[jhd]=="a":
+            listhd4[jhd]="10"
+        elif listhd4[jhd]=="B" or listhd4[jhd]=="b":
+            listhd4[jhd]="11"
+        elif listhd4[jhd]=="C" or listhd4[jhd]=="c":
+            listhd4[jhd]="12"
+        elif listhd4[jhd]=="D" or listhd4[jhd]=="d":
+            listhd4[jhd]="13"
+        elif listhd4[jhd]=="E" or listhd4[jhd]=="e":
+            listhd4[jhd]="14"
+        elif listhd4[jhd]=="F" or listhd4[jhd]=="f":
+            listhd4[jhd]="15"
+    for khd in listhd4:
+        khd=int(khd)
+        hextobin(khd)
+    lhd=len(listhd3)-1
+    placehd=1
+    sumhd=0
+    while(lhd>=0):
+        if(listhd3[lhd]==1):
+            sumhd=sumhd+placehd
+        else:
+            sumhd=sumhd+0
+        placehd=placehd+placehd
+        lhd=lhd-1
+    print(sumhd)
