@@ -1,0 +1,16 @@
+#Decimal to binary
+
+def dectobin():
+    listdb1=[]
+    numdb=int(input("Enter the Decimal number to convert to Binary number : "))
+    while(numdb>0):
+        remdb=numdb%2
+        if remdb==1:
+            listdb1.append(1)
+        else:
+            listdb1.append(0)
+        numdb=numdb//2
+    listdb2=listdb1[::-1]
+    print("The corresponding binary number is : ",end=" ")
+    for idb in listdb2:
+        print(idb,end="")
