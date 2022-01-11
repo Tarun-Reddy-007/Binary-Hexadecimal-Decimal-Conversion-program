@@ -1,0 +1,45 @@
+#Hexadecimal to binary
+
+def hextobin():
+    def hextobins(hb):
+        listhb1=[]
+        while(hb>0):
+            remhb=hb%2
+            if remhb==1:
+                listhb1.append(1)
+            else:
+                listhb1.append(0)
+            hb=hb//2
+        if len(listhb1)==3:
+            listhb1.append(0)
+        elif len(listhb1)==2:
+            listhb1.append(0)
+            listhb1.append(0)
+        elif len(listhb1)==1:
+            listhb1.append(0)
+            listhb1.append(0)
+            listhb1.append(0)
+        else:
+            pass
+        listhb2=listhb1[::-1]
+        for ihb in listhb2:
+            print(ihb,end="")
+    hexahb=input("Enter the Hexadecimal number to convert to Binary number : ")
+    sizehb=len(hexahb)
+    listhb3=list(hexahb)
+    for jhb in range(len(listhb3)):
+        if listhb3[jhb]=="A" or listhb3[jhb]=="a":
+            listhb3[jhb]="10"
+        elif listhb3[jhb]=="B" or listhb3[jhb]=="b":
+            listhb3[jhb]="11"
+        elif listhb3[jhb]=="C" or listhb3[jhb]=="c":
+            listhb3[jhb]="12"
+        elif listhb3[jhb]=="D" or listhb3[jhb]=="d":
+            listhb3[jhb]="13"
+        elif listhb3[jhb]=="E" or listhb3[jhb]=="e":
+            listhb3[jhb]="14"
+        elif listhb3[jhb]=="F" or listhb3[jhb]=="f":
+            listhb3[jhb]="15"
+    for khb in listhb3:
+        khb=int(khb)
+        hextobins(khb)
